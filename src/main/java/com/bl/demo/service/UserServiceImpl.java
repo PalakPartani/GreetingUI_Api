@@ -9,4 +9,10 @@ public class UserServiceImpl implements IUserService {
     public List<User> displayUser() {
         return userRepository.findAll();
     }
+
+    @Override
+    public User addUser(UserDto userDto) {
+        User user = new User(userDto);
+        return userRepository.save(user);
+    }
 }
