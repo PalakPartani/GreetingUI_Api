@@ -8,5 +8,6 @@ import java.util.List;
 public interface IUserService {
     List<User> displayUser();
     User addUser(UserDto user);
+    User updateUser(Integer userId, UserDto userDto);
 
 }

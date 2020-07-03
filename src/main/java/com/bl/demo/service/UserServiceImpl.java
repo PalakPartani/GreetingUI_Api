@@ -15,4 +15,11 @@ public class UserServiceImpl implements IUserService {
         User user = new User(userDto);
         return userRepository.save(user);
     }
+    @Override
+    public User updateUser(Integer userId, UserDto userDto) {
+        User user = userRepository.findById(userId).get();
+        user.setFirstName(userDto.getFirstName());
+        user.setLastName(userDto.getLastName());        //add
+        return user;
+    }
 }
